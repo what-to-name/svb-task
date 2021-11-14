@@ -1,4 +1,109 @@
-hello world
-.
-.
-.
+div{      //自适用块元素
+     
+}
+权重：		                               		访问格式
+正无穷  ！important
+1000    行间样式
+100      id选择器			                   #x
+10        class选择器 属性选择器	伪类选择器	  .x [x]
+1          标签选择器			  	   x
+0          通配符选择器		                   *
+
+父子选择器、直接子元素选择器、并列选择器、分组选择器 
+
+text-align:right//left//center; //对齐方式
+line-height:   （px） //单行高度（行距）
+text-indent:   （em） //首行缩进
+text-decoration：line-through/none/underline/overline
+cursor:help/pointer/move                   //光标定位值
+img{
+	width:       	//只需要设置宽，会等比例缩放
+	margin-left：           //（向左）移动
+}
+
+伪类选择器之一 x/[x]/... :hover{
+	......
+              background-color：orange;          //hover接受鼠标
+}
+
+
+单行文字容器居中：文本高度=容器高度
+
+1em = 1font size； = 16px（相对单位）
+
+标签分类：
+1.行级inline元素：内容都带有文字特性、决定元素所占位置，不可以通过css改变宽高	
+	eg：span，strong，em，a，del
+2.块级block元素：独占一行，可以通过css改变宽高
+	eg:  div，p，ul，li，ol，form，address
+3.行级块inline-block元素：内容决定大小，可以改变宽高
+
+PS：各种元素都能更改display：inline/block/inline-block属性成为其他类别
+
+##
+盒子模型
+
+1.盒子壁border
+2.内边距padding
+3.盒子内容
+
+
+层模型
+position:absolute（绝对定位，脱离原来位置进行定位）相对最近且存在的父级定位，若无相对文档定位
+	relative(相对定位，保留原来位置进行定位) 相对自己本身原来位置定位     
+	fixed（固定定位）
+z-index：（层数，默认为0）
+综上，一般以relative作为参照物，absolute进行定位
+
+left：；可输入像素 or 文档的%
+right：；
+top：；
+bottom: ;
+
+border-radius（圆角）：%
+
+margin塌陷：子级跳出父级定位
+
+解决margin塌陷or合并：
+bfc(改变盒子属性)
+触发一个盒子的bfc：
+position:absolute;
+display:inline-block;
+float:left/right;
+overflow:hidden; （本身意义：溢出盒子部分隐藏展示）
+
+
+
+浮动模型：
+float：left/right    //浮动元素产生浮动流，产生浮动流的元素，块级元素看不到他们，
+		但产生bfc和文本类属性元素及文本都能看到。
+
+利用伪元素清除浮动流
+clear：both清除左和右的浮动流
+
+flex盒子：
+http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+
+##
+伪元素选择器
+span::before{content: }   //当成元素进行操作。伪元素为行级元素
+span::after{ }
+
+position:absolute; float:left/right //内部将元素转换成inline-block
+
+溢出容器，要打点展示：
+
+1.单行文本
+	三件套：white-space: nowrap;
+	             overflow: hidden;
+	             text-overflow: ellipsis;
+
+2.多行文本
+	截断：使容器展示整数n行
+		width:300px;
+		height:40px;
+		line-height: 20px;
+		overflow:hidden;
+
+##
+
